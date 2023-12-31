@@ -19,7 +19,12 @@ const routes: Routes = [
     component: LayoutComponent,
     // canLoad: [AuthorizedGuard],
     children: [
-      
+      {
+        path:'dummy',
+        loadChildren: () =>
+        import('./modules/dummy/dummy.module').then((m) => m.DummyModule),
+        
+      }
     ],
   },
 

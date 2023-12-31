@@ -1,9 +1,12 @@
 import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ThemeModule } from './theme/theme.module';
 
+import { HttpClientModule, HttpParams } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
@@ -11,10 +14,16 @@ import { AppComponent } from './app.component';
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+
+    AppRoutingModule,
+    ThemeModule,
+
   ],
-  providers: [],
+  providers: [HttpParams],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 

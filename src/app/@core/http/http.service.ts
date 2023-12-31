@@ -83,23 +83,23 @@ export class HttpService implements OnDestroy
     return this.http.delete(endPoint, options);
   }
 ​
-  private handleResponse(res: any): Response {
-    if (res.status === 200)
-    {
-      this.logger.error(res.body.message +'\n'+ res.body.data);
-      switch (res.body.code) {
-        case 1000: // Success
-          return res.body;
-        default:
-          return null;
-      }
-    }
-    else
-    {
-      this.logger.error(res.status);
-      return null;
-    }
-  }
+  // private handleResponse(res: any): Response {
+  //   if (res.status === 200)
+  //   {
+  //     this.logger.error(res.body.message +'\n'+ res.body.data);
+  //     switch (res.body.code) {
+  //       case 1000: // Success
+  //         return res.body;
+  //       default:
+  //         return null;
+  //     }
+  //   }
+  //   else
+  //   {
+  //     this.logger.error(res.status);
+  //     return null;
+  //   }
+  // }
 ​
   private handleError(error: HttpErrorResponse): void {
     if (error.status === 0) {

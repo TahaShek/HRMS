@@ -6,7 +6,7 @@ import { LoggingService } from "@core/logger";
 import { ConsoleService } from "@core/logger/console.service";
 import { storage } from "@core/utils";
 
-import { ToastrService } from "ngx-toastr";
+// import { ToastrService } from "ngx-toastr";
 import { ConfirmationService } from "primeng/api";
 import { BehaviorSubject } from "rxjs";
 ​
@@ -21,7 +21,7 @@ export abstract class BaseComponent {
   protected _router = this.injector.get(Router);
   protected _http = this.injector.get(HttpService);
   protected _logger = this.injector.get(LoggingService);
-  protected _toast = this.injector.get(ToastrService);
+  // protected _toast = this.injector.get(ToastrService);
   protected _console = this.injector.get(ConsoleService);
   protected _confirmDialog = this.injector.get(ConfirmationService);
   // protected _controlContainer = this.injector.get(ControlContainer);

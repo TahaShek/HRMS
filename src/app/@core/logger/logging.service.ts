@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoggingService {
 
-  constructor(public toast: ToastrService){}
+  constructor(){}
 
   error(message: any, stackTrace?: string): void {
     // The console log should be replaced by your logging backend
@@ -20,11 +20,11 @@ export class LoggingService {
     //   );
     // }
     if (environment.errorToasts == true) {
-      this.toast.error(message);
+      // this.toast.error(message);
     }
   }
 
   info(message: any): void {
-    this.toast.info(message);
+    // this.toast.info(message);
   }
 }

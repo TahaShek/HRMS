@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, OnDestroy } from '@angular/core';
 import { storage } from '@core/utils';
-import { DEFAULT_BASE_THEME } from '@lib/constants';
+
 import { BehaviorSubject, fromEventPattern, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { AppTheme } from './theme.config';
@@ -43,7 +43,7 @@ export class ThemeService implements OnDestroy {
   }
 
   init(): void {
-    this.setTheme(this._storedTheme || DEFAULT_BASE_THEME);
+    // this.setTheme(this._storedTheme || DEFAULT_BASE_THEME);
     this._listenForMediaQueryChanges();
   }
 

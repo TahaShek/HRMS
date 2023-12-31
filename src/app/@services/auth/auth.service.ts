@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Global } from '@core/enum';
 import { HttpService } from '@core/http';
 import { storage } from '@core/utils/storage/storage.utils';
-import { ToastrService } from 'ngx-toastr';
+// import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class AuthService {
 
   isLoggedIn$ = new BehaviorSubject<boolean>(!!storage.getItem(Global.StorageKey));
 
-  constructor(private http: HttpService, private router: Router, private toastr: ToastrService) {}
+  constructor(private http: HttpService, private router: Router) {}
 
   get isLoggedIn(): boolean {
     return this.isLoggedIn$.getValue();
@@ -43,7 +43,7 @@ export class AuthService {
       this.isLoggedIn$.next(true);
       // this.router.navigate(['module', 'shared', 'accounts']);
     }).catch(err => {
-      this.toastr.error(err.error.messages[0]);
+      // this.toastr.error(err.error.messages[0]);
     });
   }
 
